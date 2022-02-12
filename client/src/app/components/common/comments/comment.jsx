@@ -5,14 +5,13 @@ import { getCurrentUserId, getUserById } from "../../../store/users";
 import { useSelector } from "react-redux";
 const Comment = ({
     content,
-    created_at: created,
+    create_at: created,
     _id: id,
     userId,
     onRemove
 }) => {
     const currentUserId = useSelector(getCurrentUserId());
     const user = useSelector(getUserById(userId));
-
     return (
         <div className="bg-light card-body  mb-3">
             <div className="row">
@@ -55,7 +54,7 @@ const Comment = ({
 Comment.propTypes = {
     content: PropTypes.string,
     edited_at: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    created_at: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    create_at: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     userId: PropTypes.string,
     onRemove: PropTypes.func,
     _id: PropTypes.string

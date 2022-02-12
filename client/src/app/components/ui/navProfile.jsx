@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { getCurrentUserData } from "../../store/users";
 const NavProfile = () => {
     const currentUser = useSelector(getCurrentUserData());
+    console.log(currentUser);
+
     const [isOpen, setOpen] = useState(false);
     const toggleMenu = () => {
         setOpen((prevState) => !prevState);
